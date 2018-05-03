@@ -1,0 +1,44 @@
+{
+    "tests": [
+        {
+            "utterance": "你 好",
+            "intent": "hello"
+        },
+        {
+            "utterance": "你 是 誰",
+            "intent": "acquaintance"
+        },
+        {
+            "utterance": "最 近 怎 麼 樣",
+            "intent": "how_are_you"
+        },
+        {
+            "utterance": "你 好 笨",
+            "intent": "bad"
+        },
+        {
+            "utterance": "厲 害",
+            "intent": "good"
+        },
+        {
+            "utterance": "我 好 無 聊",
+            "intent": "bored"
+        },
+        {
+            "utterance": "我 睡 不 著",
+            "intent": "can_not_sleep"
+        },
+        {
+            "utterance": "晚 安",
+            "intent": "goodnight"
+        },
+	    {
+            "utterance": "早 安 睡 得 好 嗎",
+            "intent": "goodmorning"
+        },
+        {
+            "utterance": "今 天 天 氣 好 嗎",
+            "intent": "weather"
+        }
+    ]
+}
