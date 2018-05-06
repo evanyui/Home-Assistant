@@ -52,6 +52,7 @@ def testAI():
         print(classifier.classify(text))
 
 def loadAI():
+    global classifier 
     classifier = IntentClassifier.load("c_classifier.pickle")
 
 def main():
@@ -101,9 +102,9 @@ def main():
     # print('Translation: %s' % translated) #DEBUG
 
 if __name__ == "__main__":
-    trainAI()
-    # testAI()
+    # trainAI()
     loadAI()
+    testAI()
 
-    listen()
+    # listen()
 

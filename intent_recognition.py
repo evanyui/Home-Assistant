@@ -60,7 +60,7 @@ class IntentClassifier:
             json_data = self.__load_data()
             self._responses = self.__build_responses(json_data)
             utterances = self.__arrange_data(json_data)
-        self._cl = NaiveBayesClassifier(utterances)
+        self.cl = NaiveBayesClassifier(utterances)
 
     def update(self, utterances=[]):
         """
@@ -74,21 +74,21 @@ class IntentClassifier:
             json_data = self.__load_data()
             self._responses = {**self._responses, **self.__build_responses(utterances)}
             utterances = self.__arrange_data(json_data)
-        self._cl.update(utterances)
+        self.cl.update(utterances)
 
     def test(self):
         """Test the accuracy of the classifier"""
         data_set = self.__arrange_test(self.__load_test())
-        return self._cl.accuracy(data_set)
+        return self.cl.accuracy(data_set)
 
     def classify(self, target):
         """Classify a text"""
-        label = self._cl.classify(target)
+        label = self.cl.classify(target)
         return label
 
     def getProbability(self, target, intent):
         """Get probability of a phrase to an intent"""
-        guess = self._cl.prob_classify(target)
+        guess = self.cl.prob_classify(target)
         return round(guess.prob(intent), 2)
 
     def response(self, target):
